@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="633.0" prefWidth="1200.0" style="-fx-background-color: ;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.environmentcontroller">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="211.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#actionHelpAbout" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Settings">
+               <items>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionactivatesoftware" text="Activate Software" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionIdealValues" text="Ideal Values" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Developer">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#actiondevelopedescription" text="Description" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <ImageView fitHeight="72.0" fitWidth="172.0" layoutX="626.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../picture/logodoe.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="548.0" layoutY="109.0" text="Department of Environment">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="590.0" layoutY="136.0" text="Chittagong Laboratory Office" />
+      <Label layoutX="561.0" layoutY="156.0" text="Zakir Hossain Road, Khulshi, Chittagong" />
+      <Label layoutX="622.0" layoutY="172.0" text="www.doe.gov.bd" />
+      <TabPane fx:id="watertab" layoutX="294.0" layoutY="202.0" prefHeight="413.0" prefWidth="900.0" style="-fx-background-color: SILVER;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="294.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="202.0">
+        <tabs>
+          <Tab text="                                                                       Industry                                                                 ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="220.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab text="Report Generation">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: LIGHTGRAY;">
+                                       <children>
+                                          <Label layoutX="408.0" layoutY="20.0" text=" " />
+                                          <Label fx:id="reportdatetext" layoutX="160.0" layoutY="195.0" text="Data From  : " />
+                                          <ComboBox fx:id="waterindustryreportdatefrom" editable="true" layoutX="259.0" layoutY="191.0" prefHeight="25.0" prefWidth="68.0" promptText="Date" />
+                                          <ComboBox fx:id="waterindustryreportmonthfrom" editable="true" layoutX="334.0" layoutY="191.0" prefHeight="25.0" prefWidth="89.0" promptText="Month" />
+                                          <ComboBox fx:id="waterindustryreportyearfrom" editable="true" layoutX="428.0" layoutY="191.0" prefHeight="25.0" prefWidth="68.0" promptText="Year" />
+                                          <ComboBox fx:id="waterindustryreportdateto" editable="true" layoutX="550.0" layoutY="194.0" prefHeight="25.0" prefWidth="68.0" promptText="Date" />
+                                          <ComboBox fx:id="waterindustryreportmonthto" editable="true" layoutX="625.0" layoutY="194.0" prefHeight="25.0" prefWidth="89.0" promptText="Month" />
+                                          <ComboBox fx:id="waterindustryreportyearto" editable="true" layoutX="719.0" layoutY="194.0" prefHeight="25.0" prefWidth="68.0" promptText="Year" />
+                                          <Label fx:id="reportdatetotext" layoutX="515.0" layoutY="198.0" text="to" />
+                                          <Button layoutX="449.0" layoutY="370.0" mnemonicParsing="false" onAction="#actionWaterIndustryReportGenerate" prefHeight="37.0" prefWidth="121.0" text="Report Generation" />
+                                          <Button layoutX="798.0" layoutY="194.0" mnemonicParsing="false" onAction="#actioncleardatewaterindustry" text="Clear Date" />
+                                          <Label layoutX="127.0" layoutY="108.0" text="Industry Name *  : " />
+                                          <ComboBox fx:id="waterindustryreportindustryname" editable="true" layoutX="259.0" layoutY="106.0" prefWidth="150.0" />
+                                          <CheckBox fx:id="ReportPrintingForOrganizationChecker" layoutX="450.0" layoutY="106.0" mnemonicParsing="false" onAction="#actionwaterindustrycheckbox" text="Official Format" />
+                                          <RadioButton fx:id="waterindustrystandlimitfalse" layoutX="259.0" layoutY="161.0" mnemonicParsing="false" text="I don't want to use standard limit">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="waterstandardlimit" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="waterindustrystandardlimittrue" layoutX="259.0" layoutY="141.0" mnemonicParsing="false" onAction="#actionwaterindustrystandardlimit" text="I want to use standard limit." toggleGroup="$waterstandardlimit" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                            </Tab>
+                            <Tab text="Registration">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: LIGHTGRAY;">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="353.0" layoutY="9.0" text=" Fill up all these information to create a new document of any industries." textAlignment="CENTER" />
+                                          <TextField fx:id="industryNameInRegistration" layoutX="220.0" layoutY="125.0" prefHeight="25.0" prefWidth="161.0" />
+                                          <Label layoutX="72.0" layoutY="129.0" text="Industry Name :" />
+                                          <Label layoutX="80.0" layoutY="77.0" text="Industry Type : " />
+                                          <Label layoutX="64.0" layoutY="178.0" text="            Location  : " />
+                                          <ComboBox fx:id="industryTypeInRegistration" editable="true" layoutX="220.0" layoutY="73.0" prefHeight="25.0" prefWidth="162.0" />
+                                          <Button layoutX="674.0" layoutY="173.0" mnemonicParsing="false" onAction="#actionWaterIndustryRegistrationSave" prefHeight="41.0" prefWidth="71.0" text="Save" />
+                                          <TextArea fx:id="industryLocationInRegistration" layoutX="219.0" layoutY="178.0" prefHeight="200.0" prefWidth="200.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content></Tab>
+                              <Tab text="Data Input">
+                                <content>
+                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="220.0" prefWidth="200.0" style="-fx-background-color: LIGHTGRAY;">
+                                       <children>
+                                          <Label layoutX="450.0" layoutY="6.0" text="Give information to save data" />
+                                          <Label layoutX="13.0" layoutY="35" text="Date  : " />
+                                          <Label layoutX="13.0" layoutY="70" text="Industry Name : " />
+                                          <Label layoutX="278.0" layoutY="70" text="Industry Type : " />
+                                          <TextField fx:id="waterIndustryTemperature" layoutX="122.0" layoutY="128.0" prefHeight="25.0" prefWidth="82.0" />
+                                          <TextField fx:id="waterIndustryPh" layoutX="122.0" layoutY="171.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <TextField fx:id="waterIndustryEC" layoutX="122.0" layoutY="217.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <TextField fx:id="waterIndustryTS" layoutX="122.0" layoutY="261.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <TextField fx:id="waterIndustryTDS" layoutX="121.0" layoutY="306.0" prefHeight="25.0" prefWidth="79.0" />
+                                          <TextField fx:id="waterIndustrySS" layoutX="352.0" layoutY="128.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterIndustryDO" layoutX="352.0" layoutY="171.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterIndustryCOD" layoutX="352.0" layoutY="217.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterIndustrySalinity" layoutX="352.0" layoutY="261.0" prefHeight="25.0" prefWidth="77.0" />
+                                          <TextField fx:id="waterIndustryChloride" layoutX="351.0" layoutY="306.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <ComboBox fx:id="waterIndustryDay" layoutX="51.0" layoutY="30" prefHeight="25.0" prefWidth="63.0" promptText="Day" />
+                                          <ComboBox fx:id="waterIndustryMonth" layoutX="117.0" layoutY="30" prefHeight="25.0" prefWidth="79.0" promptText="Month" />
+                                          <ComboBox fx:id="waterIndustryYear" editable="true" layoutX="200" layoutY="30" prefHeight="25.0" prefWidth="79.0" promptText="Year" />
+                                          <ComboBox fx:id="waterIndustryName" editable="true" layoutX="104.0" layoutY="65" prefHeight="25.0" prefWidth="161.0" />
+                                          <TextField fx:id="waterIndustryLabCode" layoutX="957.0" layoutY="65" prefHeight="25.0" prefWidth="74.0" />
+                                          <TextField fx:id="waterIndustryTurbidity" layoutX="599.0" layoutY="128.0" prefHeight="25.0" prefWidth="79.0" />
+                                          <TextField fx:id="waterIndustryTotalHardness" layoutX="599.0" layoutY="171.0" prefHeight="25.0" prefWidth="76.0" />
+                                          <Label layoutX="850" layoutY="140.0" text="Remarks" />
+                                          <TextArea fx:id="waterIndustryRemarks" layoutX="780" layoutY="160" prefHeight="72.0" prefWidth="200.0" />
+                                          <TextField fx:id="waterIndustryOilandGrease" layoutX="599.0" layoutY="217.0" prefHeight="27.0" prefWidth="76.0" />
+                                          <ComboBox fx:id="waterIndsutryWaterType" editable="true" layoutX="550.0" layoutY="65" prefHeight="25.0" prefWidth="100.0" />
+                                          <Label layoutX="16.0" layoutY="132.0" text="Temperature  ( °C )" />
+                                          <Label layoutX="98.0" layoutY="175.0" text="PH" />
+                                          <Label layoutX="56.0" layoutY="221.0" text="EC (µS/cm) " />
+                                          <Label layoutX="61.0" layoutY="265.0" text="TS ( mg/l)" />
+                                          <Label layoutX="53.0" layoutY="308.0" text="TDS ( mg/l )" />
+                                          <Label layoutX="297.0" layoutY="132.0" text="SS (mg/l)" />
+                                          <Label layoutX="296.0" layoutY="175.0" text="DO (mg/l) " />
+                                          <Label layoutX="281.0" layoutY="221.0" text="COD (mg/l) " />
+                                          <Label layoutX="280.0" layoutY="265.0" text="Salinity ( % )" />
+                                          <Label layoutX="263.0" layoutY="308.0" text="Chloride (mg/l)" />
+                                          <Label layoutX="521.0" layoutY="132.0" text="Turbidity NTU" />
+                                          <Label layoutX="483.0" layoutY="175.0" text="Total Hardness (mg/l)" />
+                                          <Label layoutX="482.0" layoutY="222.0" text="Oil and Grease (mg/l)" />
+                                          <TextField fx:id="waterIndustryBOD" layoutX="599.0" layoutY="263.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <Label layoutX="535.0" layoutY="267.0" text="BOD (mg/l)" />
+                                          <Label layoutX="480.0" layoutY="70" text="Water Type : " />
+                                          <Label layoutX="660.0" layoutY="70" text="Sample Location : " />
+                                          <ComboBox fx:id="waterIndsutrySampleLocation" editable="true" layoutX="760.0" layoutY="65" prefHeight="25.0" prefWidth="120.0" />
+                                          <Label layoutX="896.0" layoutY="70" text="Lab Code : " />
+                                          <ComboBox fx:id="waterIndustryType" editable="true" layoutX="368.0" layoutY="65" prefWidth="100.0" />
+                                          <Button layoutX="450" layoutY="369.0" mnemonicParsing="false" onAction="#actionwaterindustrydataInputButton" prefHeight="37.0" prefWidth="121.0" text="SAVE" />
+                                          <ComboBox fx:id="waterIndustrydatacombobox" layoutX="650.0" layoutY="8.0" prefHeight="25.0" prefWidth="80.0" promptText="Add" />
+                                          <ComboBox fx:id="waterIndustryserialcombobox" layoutX="440.0" layoutY="33.0" prefHeight="25.0" prefWidth="75.0" />
+                                          <Label fx:id="waterIndustryseriallabel" disable="true" layoutX="380.0" layoutY="35" opacity="0.0" text="Serial No:" />
+                                          <Label layoutX="738.0" layoutY="12.0" text="Data" />
+                                          <CheckBox fx:id="waterindustrycheckbox" layoutX="805.0" layoutY="10.0" mnemonicParsing="false" text="Simultaneously" />
+                                       </children></AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="                                                                        Routine Monitoring                                                                  ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                              <Tab text="Report Generation">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: LIGHTGRAY;">
+                                       <children>
+                                          <Label layoutX="408.0" layoutY="20.0" text=" " />
+                                          <Label layoutX="181.0" layoutY="77.0" text="Type  : " />
+                                          <ComboBox fx:id="watermonitoringreporttype" layoutX="259.0" layoutY="75.0" prefWidth="150.0" />
+                                          <Label fx:id="monitoringreportdatetext" layoutX="160.0" layoutY="205.0" text="Data From  : " />
+                                          <ComboBox fx:id="watermonitoringreportdatefrom" editable="true" layoutX="259.0" layoutY="201.0" prefHeight="25.0" prefWidth="68.0" promptText="Date" />
+                                          <ComboBox fx:id="watermonitoringreportmonthfrom" editable="true" layoutX="334.0" layoutY="201.0" prefHeight="25.0" prefWidth="89.0" promptText="Month" />
+                                          <ComboBox fx:id="watermonitoringreportyearfrom" editable="true" layoutX="428.0" layoutY="201.0" prefHeight="25.0" prefWidth="68.0" promptText="Year" />
+                                          <ComboBox fx:id="watermonitoringreportdateto" editable="true" layoutX="550.0" layoutY="204.0" prefHeight="25.0" prefWidth="68.0" promptText="Date" />
+                                          <ComboBox fx:id="watermonitoringreportmonthto" editable="true" layoutX="625.0" layoutY="204.0" prefHeight="25.0" prefWidth="89.0" promptText="Month" />
+                                          <ComboBox fx:id="watermonitoringreportyearto" editable="true" layoutX="719.0" layoutY="204.0" prefHeight="25.0" prefWidth="68.0" promptText="Year" />
+                                          <Label fx:id="monitoringreportdatetotext" layoutX="515.0" layoutY="208.0" text="to" />
+                                          <Button layoutX="449.0" layoutY="370.0" mnemonicParsing="false" onAction="#actionwatermonitoringreport" prefHeight="37.0" prefWidth="121.0" text="Report Generation" />
+                                          <Button layoutX="798.0" layoutY="204.0" mnemonicParsing="false" onAction="#actioncleardatewatermonitoring" text="Clear Date" />
+                                          <Label layoutX="173.0" layoutY="116.0" text="Name  : " />
+                                          <ComboBox fx:id="watermonitoringreportname" editable="true" layoutX="257.0" layoutY="114.0" prefWidth="150.0" />
+                                          <CheckBox fx:id="monitoringReportPrintingForOrganizationChecker" layoutX="450.0" layoutY="106.0" mnemonicParsing="false" onAction="#actionwatermonitoringcheckbox" text="For Printing" />
+                                          <RadioButton fx:id="watermonitoringstandlimitfalse" layoutX="259.0" layoutY="161.0" mnemonicParsing="false" text="I don't want to use standard limit">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="watermonitoringstandardlimit" />
+                                             </toggleGroup></RadioButton>
+                                          <RadioButton fx:id="watermonitoringstandardlimittrue" layoutX="259.0" layoutY="141.0" mnemonicParsing="false" onAction="#actionwatermonitoringstandardlimit" text="I want to use standard limit." toggleGroup="$watermonitoringstandardlimit" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Registration">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: LIGHTGRAY;">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="353.0" layoutY="9.0" text=" Fill up all these information to create a new document of any industries." textAlignment="CENTER" />
+                                          <TextField fx:id="waterMonitoringName" layoutX="220.0" layoutY="125.0" prefHeight="25.0" prefWidth="161.0" />
+                                          <Label layoutX="84.0" layoutY="129.0" text="            Name :" />
+                                          <Label layoutX="80.0" layoutY="77.0" text="                 Type : " />
+                                          <Label layoutX="64.0" layoutY="178.0" text="            Location  : " />
+                                          <ComboBox fx:id="waterMonitoringType" editable="true" layoutX="220.0" layoutY="73.0" prefHeight="25.0" prefWidth="162.0" />
+                                          <Button layoutX="674.0" layoutY="173.0" mnemonicParsing="false" onAction="#actionwaterMonitorinfSave" prefHeight="41.0" prefWidth="71.0" text="Save" />
+                                          <TextArea fx:id="waterMonitoringLocation" layoutX="219.0" layoutY="178.0" prefHeight="200.0" prefWidth="200.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                            <Tab text="    River    ">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: LIGHTGRAY;">
+                                       <children>
+                                          <Label layoutX="450.0" layoutY="6.0" text="Give information to save data" />
+                                          <Label layoutX="29.0" layoutY="20.0" text="Date  : " />
+                                          <Label layoutX="29.0" layoutY="69.0" text="River Name : " />
+                                          <Label layoutX="292.0" layoutY="69.0" text="River Water Type : " />
+                                          <TextField fx:id="waterRiverMonitoringTemperature" layoutX="122.0" layoutY="128.0" prefHeight="25.0" prefWidth="82.0" />
+                                          <TextField fx:id="waterRiverMonitoringPH" layoutX="122.0" layoutY="171.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <TextField fx:id="waterRiverMonitoringEC" layoutX="122.0" layoutY="217.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <TextField fx:id="waterRiverMonitoringTS" layoutX="122.0" layoutY="261.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <TextField fx:id="waterRiverMonitoringTDS" layoutX="121.0" layoutY="306.0" prefHeight="25.0" prefWidth="79.0" />
+                                          <TextField fx:id="waterRiverMonitoringSS" layoutX="352.0" layoutY="128.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterRiverMonitoringDO" layoutX="352.0" layoutY="171.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterRiverMonitoringCOD" layoutX="352.0" layoutY="217.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterRiverMonitoringSalinity" layoutX="352.0" layoutY="261.0" prefHeight="25.0" prefWidth="77.0" />
+                                          <TextField fx:id="waterRiverMonitoringChloride" layoutX="351.0" layoutY="306.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <ComboBox fx:id="waterRiverMonitoringDay" layoutX="69.0" layoutY="15.0" prefHeight="25.0" prefWidth="63.0" promptText="Day" />
+                                          <ComboBox fx:id="waterRiverMonitoringMonth" layoutX="135.0" layoutY="15.0" prefHeight="25.0" prefWidth="79.0" promptText="Month" />
+                                          <ComboBox fx:id="waterRiverMonitoringYear" editable="true" layoutX="216.0" layoutY="15.0" prefHeight="25.0" prefWidth="68.0" promptText="Year" />
+                                          <TextField layoutX="874.0" layoutY="56.0" prefHeight="25.0" prefWidth="74.0" promptText="Lab Code" />
+                                          <TextField fx:id="waterRiverMonitoringNTU" layoutX="599.0" layoutY="128.0" prefHeight="25.0" prefWidth="79.0" />
+                                          <TextField fx:id="waterRiverMonitoringTotalHardness" layoutX="599.0" layoutY="171.0" prefHeight="25.0" prefWidth="76.0" />
+                                          <TextField fx:id="waterRiverMonitoringOilandGrease" layoutX="599.0" layoutY="217.0" prefHeight="27.0" prefWidth="76.0" />
+                                          <Label layoutX="16.0" layoutY="132.0" text="Temperature  ( °C )" />
+                                          <Label layoutX="98.0" layoutY="175.0" text="PH" />
+                                          <Label layoutX="56.0" layoutY="221.0" text="EC (µS/cm) " />
+                                          <Label layoutX="61.0" layoutY="265.0" text="TS ( mg/l)" />
+                                          <Label layoutX="53.0" layoutY="308.0" text="TDS ( mg/l )" />
+                                          <Label layoutX="297.0" layoutY="132.0" text="SS (mg/l)" />
+                                          <Label layoutX="296.0" layoutY="175.0" text="DO (mg/l) " />
+                                          <Label layoutX="281.0" layoutY="221.0" text="COD (mg/l) " />
+                                          <Label layoutX="280.0" layoutY="265.0" text="Salinity ( % )" />
+                                          <Label layoutX="263.0" layoutY="308.0" text="Chloride (mg/l)" />
+                                          <Label layoutX="521.0" layoutY="132.0" text="Turbidity NTU" />
+                                          <Label layoutX="483.0" layoutY="175.0" text="Total Hardness (mg/l)" />
+                                          <Label layoutX="482.0" layoutY="222.0" text="Oil and Grease (mg/l)" />
+                                          <TextField fx:id="waterRiverMonitoringBOD" layoutX="599.0" layoutY="263.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <Label layoutX="535.0" layoutY="267.0" text="BOD (mg/l)" />
+                                          <ComboBox fx:id="waterRiverMonitoringRiverWaterType" editable="true" layoutX="392.0" layoutY="65.0" prefWidth="150.0" />
+                                          <Label layoutX="725.0" layoutY="70.0" text="Location :" />
+                                          <TextArea fx:id="waterRiverMonitoringLocation" layoutX="787.0" layoutY="43.0" prefHeight="72.0" prefWidth="200.0" />
+                                          <Label layoutX="558.0" layoutY="69.0" text="Lab Code :" />
+                                          <ComboBox fx:id="waterRiverMonitoringRiverName" editable="true" layoutX="103.0" layoutY="65.0" prefWidth="150.0" />
+                                          <TextField fx:id="waterRiverMonitoringLabCode" layoutX="619.0" layoutY="65.0" prefHeight="25.0" prefWidth="64.0" />
+                                          <Button layoutX="450" layoutY="359.0" mnemonicParsing="false" onAction="#actionrivermonitoringsavebutton" prefHeight="37.0" prefWidth="121.0" text="Button" />
+                                          <ComboBox fx:id="waterRiverMonitoringdatacombobox" layoutX="650.0" layoutY="8.0" prefHeight="25.0" prefWidth="80.0" promptText="Add" />
+                                          <ComboBox fx:id="waterRiverMonitoringserialcombobox" layoutX="440.0" layoutY="33.0" prefHeight="25.0" prefWidth="75.0" />
+                                          <Label fx:id="waterRiverMonitoringseriallabel" disable="true" layoutX="380.0" layoutY="35" opacity="0.0" text="Serial No:" />
+                                          <Label layoutX="738.0" layoutY="12.0" text="Data" />
+                                          <CheckBox fx:id="waterrivermonitoringcheckbox" layoutX="805.0" layoutY="11.0" mnemonicParsing="false" text="Simultaneously" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                            </Tab>
+                            <Tab text="      Sea      ">
+                                 <content>
+                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: LIGHTGRAY;">
+                                       <children>
+                                          <Label layoutX="450.0" layoutY="6.0" text="Give information to save data" />
+                                          <Label layoutX="29.0" layoutY="19.0" text="Date  : " />
+                                          <Label layoutX="39.0" layoutY="69.0" text="Sea Name : " />
+                                          <TextField fx:id="waterSeaMonitoringTemperature" layoutX="122.0" layoutY="128.0" prefHeight="25.0" prefWidth="82.0" />
+                                          <TextField fx:id="waterSeaMonitoringPH" layoutX="122.0" layoutY="171.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <TextField fx:id="waterSeaMonitoringEC" layoutX="122.0" layoutY="217.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <TextField fx:id="waterSeaMonitoringTS" layoutX="122.0" layoutY="261.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <TextField fx:id="waterSeaMonitoringTDS" layoutX="121.0" layoutY="306.0" prefHeight="25.0" prefWidth="79.0" />
+                                          <TextField fx:id="waterSeaMonitoringSS" layoutX="352.0" layoutY="128.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterSeaMonitoringDO" layoutX="352.0" layoutY="171.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterSeaMonitoringCOD" layoutX="352.0" layoutY="217.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterSeaMonitoringSalinity" layoutX="352.0" layoutY="261.0" prefHeight="25.0" prefWidth="77.0" />
+                                          <TextField fx:id="waterSeaMonitoringChloride" layoutX="351.0" layoutY="306.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <ComboBox fx:id="waterSeaMonitoringDay" layoutX="69.0" layoutY="15.0" prefHeight="25.0" prefWidth="63.0" promptText="Day" />
+                                          <ComboBox fx:id="waterSeaMonitoringMonth" layoutX="135.0" layoutY="15.0" prefHeight="25.0" prefWidth="79.0" promptText="Month" />
+                                          <ComboBox fx:id="waterSeaMonitoringYear" editable="true" layoutX="216.0" layoutY="15.0" prefHeight="25.0" prefWidth="74.0" promptText="Year" />
+                                          <TextField fx:id="waterSeaMonitoringNTU" layoutX="599.0" layoutY="128.0" prefHeight="25.0" prefWidth="79.0" />
+                                          <TextField fx:id="waterSeaMonitoringTotalHardness" layoutX="599.0" layoutY="171.0" prefHeight="25.0" prefWidth="76.0" />
+                                          <TextField fx:id="waterSeaMonitoringOilandGrease" layoutX="599.0" layoutY="217.0" prefHeight="27.0" prefWidth="76.0" />
+                                          <Label layoutX="16.0" layoutY="132.0" text="Temperature  ( °C )" />
+                                          <Label layoutX="98.0" layoutY="175.0" text="PH" />
+                                          <Label layoutX="56.0" layoutY="221.0" text="EC (µS/cm) " />
+                                          <Label layoutX="61.0" layoutY="265.0" text="TS ( mg/l)" />
+                                          <Label layoutX="53.0" layoutY="308.0" text="TDS ( mg/l )" />
+                                          <Label layoutX="297.0" layoutY="132.0" text="SS (mg/l)" />
+                                          <Label layoutX="296.0" layoutY="175.0" text="DO (mg/l) " />
+                                          <Label layoutX="281.0" layoutY="221.0" text="COD (mg/l) " />
+                                          <Label layoutX="280.0" layoutY="265.0" text="Salinity ( % )" />
+                                          <Label layoutX="263.0" layoutY="308.0" text="Chloride (mg/l)" />
+                                          <Label layoutX="521.0" layoutY="132.0" text="Turbidity NTU" />
+                                          <Label layoutX="483.0" layoutY="175.0" text="Total Hardness (mg/l)" />
+                                          <Label layoutX="482.0" layoutY="222.0" text="Oil and Grease (mg/l)" />
+                                          <TextField fx:id="waterSeaMonitoringBOD" layoutX="599.0" layoutY="263.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <Label layoutX="535.0" layoutY="267.0" text="BOD (mg/l)" />
+                                          <Label layoutX="530" layoutY="69.0" text="Location :" />
+                                          <TextArea fx:id="waterSeaMonitoringSeaLocation" layoutX="599" layoutY="45" prefHeight="63.0" prefWidth="200.0" />
+                                          <Label layoutX="297.0" layoutY="68.0" text="Lab Code :" />
+                                          <ComboBox fx:id="waterSeaMonitoringSeaName" editable="true" layoutX="103.0" layoutY="65.0" prefWidth="150.0" />
+                                          <TextField fx:id="waterSeaMonitoringLabCode" layoutX="352.0" layoutY="65.0" prefHeight="25.0" prefWidth="80" />
+                                          <Button layoutX="450" layoutY="382.0" mnemonicParsing="false" onAction="#actionWaterMonitoringSeaSaveButton" prefHeight="37.0" prefWidth="121.0" text="Save" />
+                                          <ComboBox fx:id="waterSeaMonitoringdatacombobox" layoutX="650.0" layoutY="8.0" prefHeight="25.0" prefWidth="80.0" promptText="Add" />
+                                          <ComboBox fx:id="waterSeaMonitoringserialcombobox" layoutX="440.0" layoutY="33.0" prefHeight="25.0" prefWidth="75.0" />
+                                          <Label fx:id="waterSeaMonitoringseriallabel" disable="true" layoutX="380.0" layoutY="35" opacity="0.0" text="Serial No:" />
+                                          <Label layoutX="738.0" layoutY="12.0" text="Data :" />
+                                          <CheckBox fx:id="waterseamonitoringcheckbox" layoutX="805.0" layoutY="11.0" mnemonicParsing="false" text="Simultaneously" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                            </Tab>
+                              <Tab text="     Pond     ">
+                                <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: LIGHTGRAY;">
+                                       <children>
+                                          <Label layoutX="450.0" layoutY="6.0" text="Give information to save data" />
+                                          <Label layoutX="29.0" layoutY="19.0" text="Date  : " />
+                                          <Label layoutX="29.0" layoutY="69.0" text="Pond Name : " />
+                                          <TextField fx:id="waterPondMonitoringTemperature" layoutX="122.0" layoutY="128.0" prefHeight="25.0" prefWidth="82.0" />
+                                          <TextField fx:id="waterPondMonitoringPH" layoutX="122.0" layoutY="171.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <TextField fx:id="waterPondMonitoringEC" layoutX="122.0" layoutY="217.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <TextField fx:id="waterPondMonitoringTS" layoutX="122.0" layoutY="261.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <TextField fx:id="waterPondMonitoringTDS" layoutX="121.0" layoutY="306.0" prefHeight="25.0" prefWidth="79.0" />
+                                          <TextField fx:id="waterPondMonitoringSS" layoutX="352.0" layoutY="128.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterPondMonitoringDO" layoutX="352.0" layoutY="171.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterPondMonitoringCOD" layoutX="352.0" layoutY="217.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterPondMonitoringSalinity" layoutX="352.0" layoutY="261.0" prefHeight="25.0" prefWidth="77.0" />
+                                          <TextField fx:id="waterPondMonitoringChloride" layoutX="351.0" layoutY="306.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <ComboBox fx:id="waterPondMonitoringDay" layoutX="69.0" layoutY="15.0" prefHeight="25.0" prefWidth="63.0" promptText="Day" />
+                                          <ComboBox fx:id="waterPondMonitoringMonth" layoutX="135.0" layoutY="15.0" prefHeight="25.0" prefWidth="79.0" promptText="Month" />
+                                          <ComboBox fx:id="waterPondMonitoringYear" editable="true" layoutX="216.0" layoutY="15.0" prefHeight="25.0" prefWidth="78.0" promptText="Year" />
+                                          <TextField fx:id="waterPondMonitoringNTU" layoutX="599.0" layoutY="128.0" prefHeight="25.0" prefWidth="79.0" />
+                                          <TextField fx:id="waterPondMonitoringTotalHardness" layoutX="599.0" layoutY="171.0" prefHeight="25.0" prefWidth="76.0" />
+                                          <TextField fx:id="waterPondMonitoringOilandGrease" layoutX="599.0" layoutY="217.0" prefHeight="27.0" prefWidth="76.0" />
+                                          <Label layoutX="16.0" layoutY="132.0" text="Temperature  ( °C )" />
+                                          <Label layoutX="98.0" layoutY="175.0" text="PH" />
+                                          <Label layoutX="56.0" layoutY="221.0" text="EC (µS/cm) " />
+                                          <Label layoutX="61.0" layoutY="265.0" text="TS ( mg/l)" />
+                                          <Label layoutX="53.0" layoutY="308.0" text="TDS ( mg/l )" />
+                                          <Label layoutX="297.0" layoutY="132.0" text="SS (mg/l)" />
+                                          <Label layoutX="296.0" layoutY="175.0" text="DO (mg/l) " />
+                                          <Label layoutX="281.0" layoutY="221.0" text="COD (mg/l) " />
+                                          <Label layoutX="280.0" layoutY="265.0" text="Salinity ( % )" />
+                                          <Label layoutX="263.0" layoutY="308.0" text="Chloride (mg/l)" />
+                                          <Label layoutX="521.0" layoutY="132.0" text="Turbidity NTU" />
+                                          <Label layoutX="483.0" layoutY="175.0" text="Total Hardness (mg/l)" />
+                                          <Label layoutX="482.0" layoutY="222.0" text="Oil and Grease (mg/l)" />
+                                          <TextField fx:id="waterPondMonitoringBOD" layoutX="599.0" layoutY="263.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <Label layoutX="535.0" layoutY="267.0" text="BOD (mg/l)" />
+                                          <Label layoutX="530" layoutY="70.0" text="Location :" />
+                                          <TextArea fx:id="waterPondMonitoringPondLocation" layoutX="599" layoutY="53.0" prefHeight="56.0" prefWidth="200.0" />
+                                          <Label layoutX="297" layoutY="69.0" text="Lab Code :" />
+                                          <ComboBox fx:id="waterPondMonitoringPondName" editable="true" layoutX="103.0" layoutY="65.0" prefWidth="150.0" />
+                                          <TextField fx:id="waterPondMonitoringLabCode" layoutX="352" layoutY="65.0" prefHeight="25.0" prefWidth="80" />
+                                          <Button layoutX="450" layoutY="373.0" mnemonicParsing="false" onAction="#actionWaterMonitoringPondSaveButton" prefHeight="37.0" prefWidth="121.0" text="Save" />
+                                          <ComboBox fx:id="waterPondMonitoringdatacombobox" layoutX="650.0" layoutY="8.0" prefHeight="25.0" prefWidth="80.0" promptText="Add" />
+                                          <ComboBox fx:id="waterPondMonitoringserialcombobox" layoutX="440.0" layoutY="33.0" prefHeight="25.0" prefWidth="75.0" />
+                                          <Label fx:id="waterPondMonitoringseriallabel" disable="true" layoutX="380.0" layoutY="35" opacity="0.0" text="Serial No:" />
+                                          <Label layoutX="738.0" layoutY="12.0" text="Data :" />
+                                          <CheckBox fx:id="waterpondmonitoringcheckbox" layoutX="805.0" layoutY="11.0" mnemonicParsing="false" text="Simultaneously" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab text="  Deep Tube Well  ">
+                                <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: LIGHTGRAY;">
+                                       <children>
+                                          <Label layoutX="450.0" layoutY="6.0" text="Give information to save data" />
+                                          <Label layoutX="29.0" layoutY="18.0" text="Date  : " />
+                                          <Label layoutX="29.0" layoutY="69.0" text="Deep Tube Well Name : " />
+                                          <TextField fx:id="waterdeeptubewellMonitoringTemperature" layoutX="122.0" layoutY="128.0" prefHeight="25.0" prefWidth="82.0" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringPH" layoutX="122.0" layoutY="171.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringEC" layoutX="122.0" layoutY="217.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringTS" layoutX="122.0" layoutY="261.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringTDS" layoutX="121.0" layoutY="306.0" prefHeight="25.0" prefWidth="79.0" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringSS" layoutX="352.0" layoutY="128.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringDO" layoutX="352.0" layoutY="171.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringCOD" layoutX="352.0" layoutY="217.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringSalinity" layoutX="352.0" layoutY="261.0" prefHeight="25.0" prefWidth="77.0" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringChloride" layoutX="351.0" layoutY="306.0" prefHeight="25.0" prefWidth="81.0" />
+                                          <ComboBox fx:id="waterdeeptubewellMonitoringDay" layoutX="69.0" layoutY="15.0" prefHeight="25.0" prefWidth="63.0" promptText="Day" />
+                                          <ComboBox fx:id="waterdeeptubewellMonitoringMonth" layoutX="135.0" layoutY="15.0" prefHeight="25.0" prefWidth="79.0" promptText="Month" />
+                                          <ComboBox fx:id="waterdeeptubewellMonitoringYear" editable="true" layoutX="216.0" layoutY="15.0" prefHeight="25.0" prefWidth="77.0" promptText="Year" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringNTU" layoutX="599.0" layoutY="128.0" prefHeight="25.0" prefWidth="79.0" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringTotalHardrness" layoutX="599.0" layoutY="171.0" prefHeight="25.0" prefWidth="76.0" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringOilandGrease" layoutX="599.0" layoutY="217.0" prefHeight="27.0" prefWidth="76.0" />
+                                          <Label layoutX="16.0" layoutY="132.0" text="Temperature  ( °C )" />
+                                          <Label layoutX="98.0" layoutY="175.0" text="PH" />
+                                          <Label layoutX="56.0" layoutY="221.0" text="EC (µS/cm) " />
+                                          <Label layoutX="61.0" layoutY="265.0" text="TS ( mg/l)" />
+                                          <Label layoutX="53.0" layoutY="308.0" text="TDS ( mg/l )" />
+                                          <Label layoutX="297.0" layoutY="132.0" text="SS (mg/l)" />
+                                          <Label layoutX="296.0" layoutY="175.0" text="DO (mg/l) " />
+                                          <Label layoutX="281.0" layoutY="221.0" text="COD (mg/l) " />
+                                          <Label layoutX="280.0" layoutY="265.0" text="Salinity ( % )" />
+                                          <Label layoutX="263.0" layoutY="308.0" text="Chloride (mg/l)" />
+                                          <Label layoutX="521.0" layoutY="132.0" text="Turbidity NTU" />
+                                          <Label layoutX="483.0" layoutY="175.0" text="Total Hardness (mg/l)" />
+                                          <Label layoutX="482.0" layoutY="222.0" text="Oil and Grease (mg/l)" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringBOD" layoutX="599.0" layoutY="263.0" prefHeight="25.0" prefWidth="78.0" />
+                                          <Label layoutX="535.0" layoutY="267.0" text="BOD (mg/l)" />
+                                          <Label layoutX="539.0" layoutY="70.0" text="Location :" />
+                                          <TextArea fx:id="waterdeeptubewellMonitoringLocation" layoutX="601.0" layoutY="52.0" prefHeight="56.0" prefWidth="200.0" />
+                                          <Label layoutX="358.0" layoutY="69.0" text="Lab Code :" />
+                                          <ComboBox fx:id="waterdeeptubewellMonitoringTubleName" editable="true" layoutX="153.0" layoutY="65.0" prefWidth="150.0" />
+                                          <TextField fx:id="waterdeeptubewellMonitoringLabCode" layoutX="419.0" layoutY="65.0" prefHeight="25.0" prefWidth="64.0" />
+                                          <Button layoutX="450" layoutY="377.0" mnemonicParsing="false" onAction="#actionWaterMonitoringdeeptubewellSaveButton" prefHeight="37.0" prefWidth="121.0" text="Save" />
+                                          <ComboBox fx:id="waterdeeptubewellMonitoringdatacombobox" layoutX="650.0" layoutY="8.0" prefHeight="25.0" prefWidth="80.0" promptText="Add" />
+                                          <ComboBox fx:id="waterdeeptubewellMonitoringserialcombobox" layoutX="440.0" layoutY="33.0" prefHeight="25.0" prefWidth="75.0" />
+                                          <Label fx:id="waterdeeptubewellMonitoringseriallabel" disable="true" layoutX="380.0" layoutY="35" opacity="0.0" text="Serial No:" />
+                                          <Label layoutX="738.0" layoutY="12.0" text="Data" />
+                                          <CheckBox fx:id="waterdeeptubewellmonitoringcheckbox" layoutX="805.0" layoutY="11.0" mnemonicParsing="false" text="Simultaneously" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <VBox layoutX="8.0" layoutY="262.0" prefHeight="235.0" prefWidth="262.0" style="-fx-background-color: LIGHTGRAY;" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="8.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#actiontestfee" prefHeight="41.0" prefWidth="252.0" text="TEST FEE">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="waterbutton" mnemonicParsing="false" onAction="#actionwater" prefHeight="41.0" prefWidth="252.0" text="WATER">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="airbutton" mnemonicParsing="false" onAction="#actionair" prefHeight="41.0" prefWidth="252.0" text="AIR">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="sweagebutton" mnemonicParsing="false" onAction="#actionsweage" prefHeight="41.0" prefWidth="252.0" text="SEWAGE">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="soundbutton" mnemonicParsing="false" onAction="#actionsound" prefHeight="41.0" prefWidth="252.0" text="SOUND">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+             <TabPane fx:id="testfeetab" layoutX="294.0" layoutY="202.0" prefHeight="413.0" prefWidth="900.0" style="-fx-background-color: LIGHTGRAY" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="294.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="202.0">
+            <Tab text="                                                                                                                                                         Test Fee                                                                                                                                              ">
+               <content>
+                  <fx:include source="testfee.fxml" />
+               </content>
+            </Tab>
+      </TabPane>
+       <TabPane fx:id="soundtab" layoutX="294.0" layoutY="202.0" prefHeight="413.0" prefWidth="900.0" style="-fx-background-color: SILVER;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="294.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="202.0">
+         <tabs>
+            <Tab text="                                                                       Industry                                                                 ">
+               <content>
+                  <fx:include source="soundIndustry.fxml" />
+               </content>
+            </Tab>
+            <Tab text="                                                                        Routine Monitoring                                                                  ">
+               <content>
+                  <fx:include source="soundMonitoring.fxml" />
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <TabPane fx:id="airtab" prefHeight="413.0" prefWidth="900.0" style="-fx-background-color: SILVER;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="294.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="202.0">
+         <tabs>
+            <Tab text="                                                                       Industry                                                                 ">
+               <content>
+                  <fx:include source="airIndustry.fxml" />
+               </content>
+            </Tab>
+            <Tab text="                                                                        Routine Monitoring                                                                  ">
+               <content>
+                  <fx:include source="airMonitoring.fxml" />
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <TabPane fx:id="sweagetab" prefHeight="413.0" prefWidth="200.0" style="-fx-background-color: LIGHTGRAY;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="294.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="202.0">
+         <tabs>
+            <Tab text="                                                                       Industry                                                                 ">
+               <content>
+                  <fx:include source="sweageIndustry.fxml" />
+               </content>
+            </Tab>
+            <Tab text="                                                                        Routine Monitoring                                                                  ">
+               <content>
+                  <fx:include source="sweageMonitoring.fxml" />
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Pane layoutX="39.0" layoutY="628.0" prefHeight="5.0" prefWidth="1200.0" style="-fx-background-color: LIGHTBLUE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="728.0" />
+   </children>
+</AnchorPane>

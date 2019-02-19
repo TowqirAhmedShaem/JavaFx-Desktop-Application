@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="100.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.activatesoftwarecontroller">
+   <children>
+      <Label fx:id="activatestatuslabel" alignment="CENTER" layoutY="25.0" text="Label" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Button fx:id="activatebutton" alignment="CENTER" contentDisplay="CENTER" layoutX="97.0" layoutY="57.0" mnemonicParsing="false" onAction="#actionbuttonactivatesoftware" text="Activate Software" textAlignment="CENTER" />
+   </children>
+</AnchorPane>

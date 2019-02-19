@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: LIGHTGRAY;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="application.waterindustryreportshow">
+   <children>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: LIGHTGRAY;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: LIGHTGRAY;">
+               <children>
+                  <TableView fx:id="waterindustrytable" layoutX="37.0" layoutY="86.0" prefHeight="281.0" prefWidth="537.0" AnchorPane.bottomAnchor="319.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="200.0">
+                    <columns>
+                      <TableColumn fx:id="columnserial" prefWidth="75.0" text="serial" />
+                      <TableColumn fx:id="columnsdate" prefWidth="75.0" text="date" />
+                        <TableColumn fx:id="columnname" minWidth="100.0" prefWidth="100.0" text="name" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
